@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)  # ← ここを必ず最初の方に！
 
-LINE_ACCESS_TOKEN = 'あなたのLINEアクセストークン'
+LINE_ACCESS_TOKEN = "QgHGfokoTBC9Zm8awXgPUN2O0nYduQ4Tq53rhKOWNwGC0+Fk7sy8nycfz8u6RoxMFBJeuJRATPErGNFrcQbF1B+4tfs9nFy3g8U5Rmwh+ffQY4aa4s1XVN7KMUyxSt8dHus1xu3vTrPzdPSjBH73hwdB04t891Ow1cDnyilFU="
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
