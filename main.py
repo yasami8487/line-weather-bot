@@ -1,3 +1,11 @@
+from flask import Flask, request
+import requests
+import os
+
+app = Flask(__name__)  # ← ここを必ず最初の方に！
+
+LINE_ACCESS_TOKEN = 'あなたのLINEアクセストークン'
+
 @app.route("/webhook", methods=["POST"])
 def webhook():
     try:
@@ -31,6 +39,8 @@ def webhook():
     except Exception as e:
         print(f"❌ エラー発生：{e}")
         return "Internal Server Error", 500
+
+# Render 対応（ポート）
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
