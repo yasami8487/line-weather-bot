@@ -31,21 +31,6 @@ def webhook():
     except Exception as e:
         print(f"❌ エラー発生：{e}")
         return "Internal Server Error", 500
-
-        }
-        body = {
-            "replyToken": reply_token,
-            "messages": [{
-                "type": "text",
-                "text": f"こんにちは！userId を取得しました 🙌\n\n{user_id}"
-            }]
-        }
-        requests.post("https://api.line.me/v2/bot/message/reply", headers=headers, json=body)
-
-    except Exception as e:
-        print(f"エラー：{e}")
-
-# ← ここからが Render 対応の追記部分！
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
